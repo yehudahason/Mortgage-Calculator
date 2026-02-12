@@ -1,23 +1,24 @@
-import {  Route, Routes } from 'react-router-dom'
-import './App.css'
-import Home from './pages/Home'
-import Page2 from './pages/Page2'
-import Page3 from './pages/Page3'
-import NotFound from './pages/notFound'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home";
+import NotFound from "./pages/notFound";
+import Layout from "./Layout";
 
 function App() {
-
+  const base = import.meta.env.BASE_URL;
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/page2" element={<Page2 />} />
-        <Route path="/page3" element={<Page3 />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <BrowserRouter basename={base}>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
