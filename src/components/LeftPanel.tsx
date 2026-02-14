@@ -40,11 +40,11 @@ const LeftPanel = () => {
           <label>Mortgage Type</label>
           <div className="radio-group">
             <label>
-              <input type="radio" name="type" checked />
+              <input type="radio" name="type" />
               Repayment
             </label>
             <label>
-              <input type="radio" name="type" />
+              <input type="radio" name="type" checked />
               Interest Only
             </label>
           </div>
