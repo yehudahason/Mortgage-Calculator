@@ -101,7 +101,7 @@ form {
 .result-card {
   border-top: 4px solid var(--color-lime);
   border-radius: 6px;
-  background-color: rgb(38, 40, 59);
+  background-color: #0e232f;
   border-radius: 8px;
   padding: 16px;
   display: flex;
@@ -245,9 +245,12 @@ button {
   margin-top: 12px;
 }
 @media (min-width: 690px) {
+  .main {
+    padding: 40px;
+  }
   .card {
     width: 688px;
-    height: 1212px;
+    height: 1113px;
     flex-direction: column;
     border-radius: 0 0 1rem 1rem;
   }
