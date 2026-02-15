@@ -12,7 +12,7 @@ const LeftPanel = () => {
           <label htmlFor="amount">Mortgage Amount</label>
           <div className="input-group">
             <span>£</span>
-            <input type="text" id="amount" value="300,000" />
+            <input type="text" id="amount" />
           </div>
         </div>
 
@@ -21,7 +21,7 @@ const LeftPanel = () => {
           <div className="form-group">
             <label htmlFor="term">Mortgage Term</label>
             <div className="input-group">
-              <input type="text" id="term" value="25" />
+              <input type="text" id="term" style={{ paddingLeft: "18px" }} />
               <span>years</span>
             </div>
           </div>
@@ -29,7 +29,7 @@ const LeftPanel = () => {
           <div className="form-group">
             <label htmlFor="rate">Interest Rate</label>
             <div className="input-group">
-              <input type="text" id="rate" value="5.25" />
+              <input type="text" id="rate" style={{ paddingLeft: "18px" }} />
               <span>%</span>
             </div>
           </div>

@@ -77,10 +77,55 @@ form {
 }
 .results {
   background-color: var(--color-slate-900);
-  border-radius: 0;
-  height: 390px;
+
+  min-height: auto;
+  padding: 32px 24px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+.results h2 {
+  color: var(--color-white);
+  text-align: left;
+  font: var(--text-preset-2);
+  letter-spacing: var(--text-preset-2-letter-spacing);
+}
+.results p {
+  color: var(--color-slate-300);
+  text-align: left;
+  font: var(--text-preset-4);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  margin-bottom: 24px;
 }
 
+.result-card {
+  border-top: 4px solid var(--color-lime);
+  border-radius: 6px;
+  background-color: rgb(38, 40, 59);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  min-height: auto;
+  padding: 16px 24px;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--color-slate-500);
+  margin: 0;
+}
+.result-card h3 {
+  color: var(--color-lime);
+  font: var(--text-preset-1);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+}
+.result-card strong {
+  color: var(--color-white);
+  font: var(--text-preset-2);
+  letter-spacing: var(--text-preset-2-letter-spacing);
+}
 .calculator-header {
   display: flex;
   flex-direction: column;
@@ -105,10 +150,13 @@ form {
 }
 input {
   height: 48px;
-  border: 1px solid var(--color-slate-300);
+  border: 1px solid var(--color-slate-500);
   border-radius: 3px;
   padding-left: 50px;
   width: 100%;
+  color: var(--color-slate-900);
+  font: var(--text-preset-3);
+  letter-spacing: var(--text-preset-3-letter-spacing);
 }
 .input-group #amount {
   width: 100%;
@@ -118,16 +166,16 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 46px;
-  left: 1px;
+  height: 44px;
+  left: 2px;
   top: 50%;
   padding: 2px 16px;
   border-radius: 3px;
   transform: translateY(-50%);
   background-color: var(--color-slate-100);
   color: var(--color-slate-700);
-  font: var(--text-preset-4);
-  letter-spacing: var(--text-preset-4-letter-spacing);
+  font: var(--text-preset-3);
+  letter-spacing: var(--text-preset-3-letter-spacing);
   pointer-events: none;
 }
 .form-row {
@@ -148,7 +196,7 @@ input {
 }
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 12px;
   color: var(--color-slate-700);
   font: var(--text-preset-4);
   letter-spacing: var(--text-preset-4-letter-spacing);
@@ -156,16 +204,15 @@ input {
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 .radio-group label {
   display: flex;
   align-items: center;
   /* justify-content: space-between; */
   gap: 0.5rem;
-  color: var(--color-slate-700);
-  font: var(--text-preset-4);
-  letter-spacing: var(--text-preset-4-letter-spacing);
+  color: var(--color-slate-900);
+  font: var(--text-preset-3);
+  letter-spacing: var(--text-preset-3-letter-spacing);
   border: 1px solid var(--color-slate-300);
   height: 48px;
   border: 1px solid var(--color-slate-300);
@@ -183,23 +230,43 @@ input {
 .radio-group input[type="radio"]:checked {
   border-color: #4f46e5;
 }
-@media (min-width: 600px) {
+
+button {
+  background-color: var(--color-lime);
+  color: var(--color-slate-900);
+  font: var(--text-preset-3);
+  letter-spacing: var(--text-preset-3-letter-spacing);
+  border: none;
+  border-radius: 46px;
+  padding: 12px;
+  cursor: pointer;
+  width: 314px;
+  height: 56px;
+  margin-top: 12px;
+}
+@media (min-width: 690px) {
   .card {
-    width: 504px;
+    width: 688px;
     height: 1212px;
     flex-direction: column;
     border-radius: 0 0 1rem 1rem;
   }
   .calculator {
-    width: 504px;
+    width: 688px;
     height: 606px;
     padding: 40px;
   }
   .results {
-    width: 504px;
-    height: 606px;
+    width: 688px;
+    height: 507px;
     padding: 1rem;
     border-radius: 0 0 1rem 1rem;
+    padding: 40px;
+  }
+
+  .result-card {
+    width: 608px;
+    height: 293px;
   }
   .calculator-header {
     flex-direction: row;
@@ -219,5 +286,9 @@ input {
   }
   .results {
     border-radius: 0 1rem 1rem 3rem;
+  }
+  .result-card {
+    width: 424px;
+    height: 293px;
   }
 }
