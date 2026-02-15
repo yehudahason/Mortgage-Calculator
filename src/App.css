@@ -78,7 +78,7 @@ form {
 .results {
   background-color: var(--color-slate-900);
 
-  min-height: auto;
+  height: 455px;
   padding: 32px 24px;
   display: flex;
   gap: 16px;
@@ -109,7 +109,7 @@ form {
   justify-content: space-around;
   gap: 8px;
   width: 100%;
-  min-height: auto;
+  height: 225px;
   padding: 16px 24px;
 }
 hr {
@@ -123,9 +123,10 @@ hr {
   letter-spacing: var(--text-preset-1-letter-spacing);
 }
 .result-card p {
-  margin: 12px 0 0;
+  margin: 2px 0 0;
 }
 .result-card strong {
+  margin: 2px;
   color: var(--color-white);
   font: var(--text-preset-2);
   letter-spacing: var(--text-preset-2-letter-spacing);
@@ -290,6 +291,9 @@ button img {
   .form-row {
     flex-direction: row;
   }
+  .result-card strong {
+    margin-top: -16px;
+  }
 }
 
 @media (min-width: 1010px) {
@@ -306,6 +310,6 @@ button img {
   .result-card {
     min-height: 0;
     width: 424px;
-    height: 300px;
+    height: 293px;
   }
 }
