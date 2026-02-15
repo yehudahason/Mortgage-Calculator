@@ -1,4 +1,6 @@
 const LeftPanel = () => {
+  const base = import.meta.env.BASE_URL;
+
   return (
     <div className="calculator">
       <div className="calculator-header">
@@ -51,7 +53,14 @@ const LeftPanel = () => {
         </div>
 
         {/* Button */}
-        <button type="submit">Calculate Repayments</button>
+        <button type="submit">
+          {" "}
+          <img
+            src={`${base}assets/images/icon-calculator.svg`}
+            alt="Calculator icon"
+          />{" "}
+          Calculate Repayments
+        </button>
       </form>
     </div>
   );
