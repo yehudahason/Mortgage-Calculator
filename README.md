@@ -2,9 +2,9 @@
 
 ![Design preview for the Mortgage repayment calculator coding challenge](./preview.jpg)
 
-This is a solution to the [Mortgage repayment calculator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
-
 ## Welcome! 👋
+
+This is a solution to the [Mortgage repayment calculator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 Thanks for checking out this front-end coding challenge.
 
