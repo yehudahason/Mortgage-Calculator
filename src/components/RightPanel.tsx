@@ -5,7 +5,7 @@ const RightPanel = ({ results }: { results: Results }) => {
 
   return (
     <div className="results">
-      {results && !isNaN(results.monthly) ? (
+      {results && !isNaN(results.monthly) && !isNaN(results.total) ? (
         <>
           <h2>Your results</h2>
           <p>

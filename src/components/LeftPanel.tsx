@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { calculate } from "../utils/calculate";
 type Results = {
   setResults: React.Dispatch<
@@ -28,7 +28,8 @@ const LeftPanel = ({ setResults }: Results) => {
   function validate() {
     const newErrors = {
       amount: amount.trim() === "" || isNaN(Number(amount)),
-      years: years.trim() === "" || isNaN(Number(years)),
+      years:
+        years.trim() === "" || isNaN(Number(years)) || parseFloat(years) <= 0,
       annualRate: annualRate.trim() === "" || isNaN(Number(annualRate)),
       type: type.trim() === "",
     };
@@ -43,7 +44,6 @@ const LeftPanel = ({ setResults }: Results) => {
     setResults(result);
     console.log(result);
   }
-
   return (
     <div className="calculator">
       <div className="calculator-header">
