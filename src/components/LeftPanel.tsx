@@ -34,10 +34,16 @@ const LeftPanel = ({ setResults }: Results) => {
   // ✅ Centralized validation logic
   function validateField() {
     return {
-      amount: amount.trim() === "" || isNaN(Number(amount)),
+      amount:
+        amount.trim() === "" ||
+        isNaN(Number(amount)) ||
+        parseFloat(amount) <= 0,
       years:
         years.trim() === "" || isNaN(Number(years)) || parseFloat(years) <= 0,
-      annualRate: annualRate.trim() === "" || isNaN(Number(annualRate)),
+      annualRate:
+        annualRate.trim() === "" ||
+        isNaN(Number(annualRate)) ||
+        parseFloat(annualRate) < 0,
       type: type.trim() === "",
     };
   }
