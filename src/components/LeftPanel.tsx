@@ -4,10 +4,10 @@ type Results = {
   setResults: React.Dispatch<
     React.SetStateAction<{ monthly: number; total: number } | null>
   >;
-  result?: { monthly: number; total: number } | null;
+  results?: { monthly: number; total: number } | null;
 };
 
-const LeftPanel = ({ setResults, result }: Results) => {
+const LeftPanel = ({ setResults }: Results) => {
   const base = import.meta.env.BASE_URL;
   const [amount, setAmount] = useState("");
   const [years, setYears] = useState("");

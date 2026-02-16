@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <div className="card">
-      <LeftPanel setResults={setResults} result={results} />
+      <LeftPanel setResults={setResults} />
       <RightPanel results={results} />
     </div>
   );
