@@ -212,7 +212,14 @@ input[type="radio"]:focus + label {
 }
 input:focus + span {
   background-color: var(--color-lime);
+  height: 48px;
+  top: 0;
 }
+
+input:focus + span.right {
+  right: 0;
+}
+
 .input-group #amount {
   width: 100%;
 }
@@ -346,6 +353,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+button:hover {
+  background-color: rgb(244, 249, 109);
 }
 button img {
   margin-right: 8px;
