@@ -188,7 +188,7 @@ input:focus {
 }
 
 .radio-label:hover {
-  border: 1px solid var(--color-slate-900);
+  border: 1px solid var(--color-lime);
 }
 
 .radio-label.active {
