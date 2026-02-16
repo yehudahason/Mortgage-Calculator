@@ -1,11 +1,16 @@
 import LeftPanel from "../components/LeftPanel";
 import RightPanel from "../components/RightPanel";
-
+import { useState } from "react";
 const Home = () => {
+  const [results, setResults] = useState<{
+    monthly: number;
+    total: number;
+  } | null>(null);
+
   return (
     <div className="card">
-      <LeftPanel />
-      <RightPanel />
+      <LeftPanel setResults={setResults} result={results} />
+      <RightPanel results={results} />
     </div>
   );
 };
