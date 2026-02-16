@@ -90,7 +90,7 @@ const LeftPanel = ({ setResults }: Results) => {
     <div className="calculator">
       <div className="calculator-header">
         <h1>Mortgage Calculator</h1>
-        <a href="#">Clear All</a>
+        <a href={base}>Clear All</a>
       </div>
 
       <form>
