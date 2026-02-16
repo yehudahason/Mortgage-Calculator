@@ -156,32 +156,54 @@ hr {
 input {
   height: 48px;
   border: 1px solid var(--color-slate-500);
-  border-radius: 3px;
+  border-radius: 5px;
   padding-left: 50px;
   width: 100%;
   color: var(--color-slate-900);
   font: var(--text-preset-3);
   letter-spacing: var(--text-preset-3-letter-spacing);
 }
+
+input:focus {
+  outline: none;
+  border-color: var(--color-slate-900);
+}
 .input-group #amount {
   width: 100%;
 }
-.input-group span {
+span.left {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 44px;
-  left: 2px;
-  top: 50%;
+  height: 46px;
+  left: 1px;
+  top: 0;
   padding: 2px 16px;
-  border-radius: 3px;
-  transform: translateY(-50%);
+  border-radius: 4px 0 0 4px;
   background-color: var(--color-slate-100);
   color: var(--color-slate-700);
   font: var(--text-preset-3);
   letter-spacing: var(--text-preset-3-letter-spacing);
   pointer-events: none;
+}
+span.err {
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  height: 18px;
+  left: -16px;
+  top: 120%;
+  right: auto;
+  padding: 2px 16px;
+  background-color: transparent;
+  transform: translateY(-50%);
+  color: var(--color-red);
+  font: var(--text-preset-5);
+  letter-spacing: var(--text-preset-5-letter-spacing);
+}
+.err.radio {
+  top: 100%;
 }
 .form-row {
   display: flex;
@@ -195,9 +217,25 @@ input {
   width: 100%;
 }
 
-.form-row .input-group span {
+span.right {
+  height: 46px;
+  padding: 4px 16px;
+  background-color: var(--color-slate-100);
+  color: var(--color-slate-700);
+  font: var(--text-preset-3);
+  letter-spacing: var(--text-preset-3-letter-spacing);
+  pointer-events: none;
+  position: absolute;
   right: 1px;
   left: auto;
+  top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 4px 4px 0;
+}
+.form-group {
+  position: relative;
 }
 .form-group label {
   display: block;
@@ -225,6 +263,19 @@ input {
   border-radius: 5px;
 }
 
+.form-group.err input {
+  color: var(--color-red);
+  border: #d73328 1px solid;
+}
+.form-group.err span.left,
+.form-group.err span.right {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  height: 47.5px;
+}
+.form-group.err span.err {
+  visibility: visible;
+}
 .radio-group input[type="radio"] {
   /* appearance: none; */
   width: 24px;
