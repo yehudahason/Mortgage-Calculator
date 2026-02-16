@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { calculate } from "../utils/calculate";
 type Results = {
   setResults: React.Dispatch<
