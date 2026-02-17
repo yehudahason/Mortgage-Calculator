@@ -417,7 +417,7 @@ button img {
     /* border-radius: 0 1rem 1rem 0; */
   }
   .results {
-    border-radius: 0 1.5rem 1.5rem 6rem;
+    border-radius: 0 1.5rem 1.5rem 5rem;
     height: 606px;
   }
   .result-card {
