@@ -377,7 +377,7 @@ button img {
     width: 688px;
     height: 1113px;
     flex-direction: column;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
   }
   .calculator {
     width: 688px;
@@ -388,7 +388,7 @@ button img {
     width: 688px;
     height: 507px;
     padding: 1rem;
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 0 0 1.5rem 1.5rem;
     padding: 40px;
   }
 
@@ -417,7 +417,7 @@ button img {
     /* border-radius: 0 1rem 1rem 0; */
   }
   .results {
-    border-radius: 0 1rem 1rem 3rem;
+    border-radius: 0 1.5rem 1.5rem 6rem;
     height: 606px;
   }
   .result-card {
