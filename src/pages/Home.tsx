@@ -5,6 +5,7 @@ const Home = () => {
   const [results, setResults] = useState<{
     monthly: number;
     total: number;
+    interest: number;
   } | null>(null);
 
   return (

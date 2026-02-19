@@ -11,12 +11,12 @@ export function calculate({ amount, years, annualRate, type }: Mortgage) {
     monthlyPayment = amount * monthlyRate;
     totalRepayment = monthlyPayment * numberOfPayments + amount;
   } else {
-    if (monthlyRate === 0) {
+    if (Math.abs(monthlyRate) < 1e-8) {
       monthlyPayment = amount / numberOfPayments;
     } else {
-      monthlyPayment =
-        (amount * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /
-        (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+      const factor = Math.pow(1 + monthlyRate, numberOfPayments);
+
+      monthlyPayment = (amount * monthlyRate * factor) / (factor - 1);
     }
 
     totalRepayment = monthlyPayment * numberOfPayments;
@@ -25,5 +25,6 @@ export function calculate({ amount, years, annualRate, type }: Mortgage) {
   return {
     monthly: Number(monthlyPayment.toFixed(2)),
     total: Number(totalRepayment.toFixed(2)),
+    interest: Number((totalRepayment - amount).toFixed(2)),
   };
 }

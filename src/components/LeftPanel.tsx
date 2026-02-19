@@ -5,7 +5,11 @@ type MortgageType = "repayment" | "interestOnly";
 
 type Results = {
   setResults: React.Dispatch<
-    React.SetStateAction<{ monthly: number; total: number } | null>
+    React.SetStateAction<{
+      monthly: number;
+      total: number;
+      interest: number;
+    } | null>
   >;
 };
 

@@ -1,4 +1,4 @@
-type Results = { monthly: number; total: number } | null;
+type Results = { monthly: number; total: number; interest: number } | null;
 
 const RightPanel = ({ results }: { results: Results }) => {
   const base = import.meta.env.BASE_URL;
@@ -17,6 +17,10 @@ const RightPanel = ({ results }: { results: Results }) => {
           <div className="result-card">
             <p>Your monthly repayments</p>
             <h3>£{results.monthly.toFixed(2)}</h3>
+            <hr />
+
+            <p>Total interest you'll pay over the term</p>
+            <strong>£{results.interest.toFixed(2)}</strong>
             <hr />
             <p>Total you'll repay over the term</p>
             <strong>£{results.total.toFixed(2)}</strong>
