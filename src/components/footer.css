@@ -6,7 +6,7 @@
   padding: 1rem;
 
   transform: translateX(-100px);
-  color: rgb(237, 166, 73);
+  color: rgb(130, 108, 80);
   width: 100%;
 }
 
@@ -14,7 +14,7 @@
 .attribution a {
   margin: 0 0.25rem;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   color: rgb(230, 82, 28);
   transition:
     color 0.2s ease,
