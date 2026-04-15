@@ -12,7 +12,7 @@ Thanks for checking out this front-end coding challenge.
 
 ### Links
 
-- Live Site URL: [GitHub Pages](https://yehudahason.github.io/Mortgage-Calculator/)
+- My solution at : [GitHub Pages](https://yehudahason.github.io/Mortgage-Calculator/)
 
 ### Built with
 
