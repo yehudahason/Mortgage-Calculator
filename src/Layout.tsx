@@ -6,8 +6,8 @@ function Layout() {
     <>
       <main className="main">
         <Outlet />
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 }
