@@ -380,13 +380,11 @@ button img {
     border-radius: 1.5rem;
   }
   .calculator {
-    width: 500px;
     height: 606px;
     padding: 40px;
   }
   .results {
     width: fit-content;
-    min-width: 688px;
     height: 606px;
     padding: 1rem;
     border-radius: 0 0 1.5rem 1.5rem;
@@ -428,5 +426,8 @@ button img {
   }
   .result-card {
     min-height: 0;
+  }
+  .calculator {
+    width: 500px;
   }
 }
