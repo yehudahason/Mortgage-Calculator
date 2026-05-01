@@ -371,7 +371,7 @@ button img {
 }
 @media (min-width: 768px) {
   .main {
-    padding: 40px;
+    padding: 40px 0;
   }
   .card {
     width: 688px;
@@ -380,7 +380,7 @@ button img {
     border-radius: 1.5rem;
   }
   .calculator {
-    width: 550px;
+    width: 500px;
     height: 606px;
     padding: 40px;
   }
@@ -415,7 +415,7 @@ button img {
   }
 }
 
-@media (min-width: 1010px) {
+@media (min-width: 1150px) {
   .card {
     min-height: unset;
     width: fit-content;
