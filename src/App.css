@@ -385,6 +385,7 @@ button img {
   }
   .results {
     width: fit-content;
+    min-width: 100%;
     height: 606px;
     padding: 1rem;
     border-radius: 0 0 1.5rem 1.5rem;
@@ -423,6 +424,8 @@ button img {
   .results {
     border-radius: 0 1.5rem 1.5rem 5rem;
     height: 606px;
+    min-width: unset;
+    width: fit-content;
   }
   .result-card {
     min-height: 0;
