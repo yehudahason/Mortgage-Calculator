@@ -51,6 +51,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .card {
   display: flex;
@@ -59,7 +60,7 @@ body {
   background-color: var(--color-white);
   border-radius: 0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  height: 1188px;
+  min-height: 1188px;
 }
 
 .calculator {
@@ -79,10 +80,11 @@ form {
   background-color: var(--color-slate-900);
 
   height: 606px;
-  padding: 32px 24px;
+  padding: 32px 10px;
   display: flex;
   gap: 16px;
   flex-direction: column;
+  width: 100%;
 }
 .results h2 {
   color: var(--color-white);
@@ -96,6 +98,7 @@ form {
   font: var(--text-preset-4);
   letter-spacing: var(--text-preset-4-letter-spacing);
   margin-bottom: 12px;
+  max-width: 484px;
 }
 body.err .results {
   height: 455px;
@@ -132,8 +135,8 @@ hr {
 }
 .result-card h3 {
   color: var(--color-lime);
-  font: var(--text-preset-1);
-  letter-spacing: var(--text-preset-1-letter-spacing);
+  font: var(--text-preset-2);
+  letter-spacing: var(--text-preset-2-letter-spacing);
 }
 .result-card p {
   margin: 2px 0 0;
@@ -382,15 +385,19 @@ button img {
     padding: 40px;
   }
   .results {
-    width: 688px;
+    width: fit-content;
     height: 606px;
     padding: 1rem;
     border-radius: 0 0 1.5rem 1.5rem;
     padding: 40px;
   }
+  .result-card h3 {
+    font: var(--text-preset-1);
+    letter-spacing: var(--text-preset-1-letter-spacing);
+  }
 
   .result-card {
-    width: 608px;
+    width: fit-content;
     height: 293px;
   }
   .calculator-header {
@@ -408,6 +415,7 @@ button img {
 
 @media (min-width: 1010px) {
   .card {
+    min-height: unset;
     width: 1008px;
     height: 606px;
     flex-direction: row;
@@ -419,7 +427,7 @@ button img {
   }
   .result-card {
     min-height: 0;
-    width: 424px;
+    /* width: 424px; */
     height: 293px;
   }
 }
