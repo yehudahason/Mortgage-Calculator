@@ -380,7 +380,7 @@ button img {
     border-radius: 1.5rem;
   }
   .calculator {
-    width: fit-content;
+    width: 550px;
     height: 606px;
     padding: 40px;
   }
