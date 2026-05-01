@@ -399,7 +399,8 @@ button img {
 
   .result-card {
     width: fit-content;
-    height: 293px;
+    min-width: 100%;
+    height: 320px;
   }
   .calculator-header {
     flex-direction: row;
@@ -410,7 +411,7 @@ button img {
     flex-direction: row;
   }
   .result-card strong {
-    margin-top: -16px;
+    /* margin-top: -16px; */
   }
 }
 
@@ -427,6 +428,5 @@ button img {
   }
   .result-card {
     min-height: 0;
-    height: 293px;
   }
 }
