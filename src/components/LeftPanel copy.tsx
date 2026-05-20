@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { calculate } from "../utils/calculate";
 
 type MortgageType = "repayment" | "interestOnly";
 
-type ResultsProps = {
+type Results = {
   setResults: React.Dispatch<
     React.SetStateAction<{
       monthly: number;
@@ -13,7 +13,7 @@ type ResultsProps = {
   >;
 };
 
-const LeftPanel = ({ setResults }: ResultsProps) => {
+const LeftPanel = ({ setResults }: Results) => {
   const base = import.meta.env.BASE_URL;
 
   const [amount, setAmount] = useState("");
@@ -66,8 +66,7 @@ const LeftPanel = ({ setResults }: ResultsProps) => {
     setErrors(filteredErrors);
   }, [amount, years, annualRate, type, touched]);
 
-  // ✅ Properly typed React Form Submit Event
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent<HTMLButtonElement>) {
     e.preventDefault();
 
     // Mark all fields touched on submit
@@ -84,14 +83,13 @@ const LeftPanel = ({ setResults }: ResultsProps) => {
     setErrors(validation);
 
     const hasErrors = Object.values(validation).some(Boolean);
-    // Extra safety guard: ensure type isn't empty string before calculating
-    if (hasErrors || type === "") return;
+    if (hasErrors) return;
 
     const mortgage = {
       amount: parseFloat(amount),
       years: parseFloat(years),
       annualRate: parseFloat(annualRate),
-      type, // TypeScript now guarantees this is strictly "repayment" | "interestOnly"
+      type,
     };
 
     const result = calculate(mortgage);
@@ -105,102 +103,67 @@ const LeftPanel = ({ setResults }: ResultsProps) => {
         <a href={base}>Clear All</a>
       </div>
 
-      {/* Simplified inline syntax passing the typed handler directly */}
-      <form onSubmit={handleSubmit}>
+      <form>
         {/* Mortgage Amount */}
         <div className={`form-group ${errors.amount ? "err" : ""}`}>
           <label htmlFor="amount">Mortgage Amount</label>
           <div className="input-group">
-            {errors.amount && (
-              <span id="amount-error" className="err amount" role="alert">
-                This field is required
-              </span>
-            )}
+            <span className="err amount">This field is required</span>
             <input
               type="text"
               id="amount"
               value={amount}
-              aria-invalid={errors.amount ? "true" : "false"}
-              aria-describedby={errors.amount ? "amount-error" : undefined}
               onChange={(e) => {
                 setAmount(e.target.value);
                 setTouched((prev) => ({ ...prev, amount: true }));
               }}
             />
-            <span className="left" aria-hidden="true">
-              £
-            </span>
+            <span className="left">£</span>
           </div>
         </div>
 
         {/* Term & Rate */}
         <div className="form-row">
           <div className={`form-group ${errors.years ? "err" : ""}`}>
-            {/* Kept id/htmlFor matching while aligning the error hooks perfectly */}
-            <label htmlFor="years">Mortgage Term</label>
+            <label htmlFor="term">Mortgage Term</label>
             <div className="input-group">
-              {errors.years && (
-                <span id="years-error" className="err amount" role="alert">
-                  This field is required
-                </span>
-              )}
+              <span className="err amount">This field is required</span>
               <input
                 type="text"
-                id="years"
+                id="term"
                 value={years}
-                aria-invalid={errors.years ? "true" : "false"}
-                aria-describedby={errors.years ? "years-error" : undefined}
                 onChange={(e) => {
                   setYears(e.target.value);
                   setTouched((prev) => ({ ...prev, years: true }));
                 }}
               />
-              <span className="right" aria-hidden="true">
-                years
-              </span>
+              <span className="right">years</span>
             </div>
           </div>
 
           <div className={`form-group ${errors.annualRate ? "err" : ""}`}>
-            <label htmlFor="annualRate">Interest Rate</label>
+            <label htmlFor="rate">Interest Rate</label>
             <div className="input-group">
-              {errors.annualRate && (
-                <span id="annualRate-error" className="err amount" role="alert">
-                  This field is required
-                </span>
-              )}
+              <span className="err amount">This field is required</span>
               <input
                 type="text"
-                id="annualRate"
+                id="rate"
                 value={annualRate}
-                aria-invalid={errors.annualRate ? "true" : "false"}
-                aria-describedby={
-                  errors.annualRate ? "annualRate-error" : undefined
-                }
                 onChange={(e) => {
                   setAnnualRate(e.target.value);
                   setTouched((prev) => ({ ...prev, annualRate: true }));
                 }}
               />
-              <span className="right" aria-hidden="true">
-                %
-              </span>
+              <span className="right">%</span>
             </div>
           </div>
         </div>
 
         {/* Mortgage Type */}
-        <fieldset
-          className={`form-group ${errors.type ? "err" : ""}`}
-          aria-invalid={errors.type ? "true" : "false"}
-        >
-          <legend>Mortgage Type</legend>
+        <div className={`form-group ${errors.type ? "err" : ""}`}>
+          <label>Mortgage Type</label>
           <div className="radio-group">
-            {errors.type && (
-              <span id="type-error" className="err amount" role="alert">
-                This field is required
-              </span>
-            )}
+            <span className="err amount">This field is required</span>
             <label
               className={
                 type === "repayment" ? "radio-label active" : "radio-label"
@@ -210,7 +173,6 @@ const LeftPanel = ({ setResults }: ResultsProps) => {
                 type="radio"
                 name="type"
                 checked={type === "repayment"}
-                aria-describedby={errors.type ? "type-error" : undefined}
                 onChange={() => {
                   setType("repayment");
                   setTouched((prev) => ({ ...prev, type: true }));
@@ -228,7 +190,6 @@ const LeftPanel = ({ setResults }: ResultsProps) => {
                 type="radio"
                 name="type"
                 checked={type === "interestOnly"}
-                aria-describedby={errors.type ? "type-error" : undefined}
                 onChange={() => {
                   setType("interestOnly");
                   setTouched((prev) => ({ ...prev, type: true }));
@@ -237,14 +198,13 @@ const LeftPanel = ({ setResults }: ResultsProps) => {
               Interest Only
             </label>
           </div>
-        </fieldset>
+        </div>
 
         {/* Button */}
-        <button type="submit">
+        <button type="submit" onClick={handleSubmit}>
           <img
             src={`${base}assets/images/icon-calculator.svg`}
-            alt=""
-            aria-hidden="true"
+            alt="Calculator icon"
           />
           Calculate Repayments
         </button>

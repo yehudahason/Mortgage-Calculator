@@ -63,6 +63,17 @@ body {
   min-height: 1188px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 .calculator {
   display: flex;
   flex-direction: column;
@@ -293,7 +304,11 @@ span.right {
 .form-group {
   position: relative;
 }
-.form-group label {
+fieldset {
+  border: none;
+}
+.form-group label,
+.form-group legend {
   display: block;
   margin-bottom: 12px;
   color: var(--color-slate-700);
